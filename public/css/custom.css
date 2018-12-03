@@ -1,0 +1,195 @@
+.navbar-laravel{
+    background-color: #8b004d;
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.9);
+    width: 100%;
+    z-index: 999;
+  }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.custom-font-cursive{
+    font-family: cursive;
+}
+.font-ghost{
+    color: ghostwhite
+}
+
+/* //add Image icon on search bar */
+#mySearchBar{
+    background-image: url('/used_images/searchbar.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: right;
+    margin-bottom: 3px;
+}
+
+/* change table header
+ th{
+    background-color: #8b004d;
+    color: ghostwhite;
+} */
+th{
+    background-color: #bfbfbf;
+    color: #3f3f44;
+}
+
+.custom-bg-color-light{
+    background-color: #efebeb;
+}
+
+/* // navbar fonts of site title */
+  .navbar-light .navbar-brand{
+    color:ghostwhite;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.navbar-light .navbar-brand:hover{
+    color:ghostwhite;
+    font-weight: 600;
+}
+.navbar-light .navbar-nav .show > .nav-link,
+.navbar-light .navbar-nav .active > .nav-link,
+.navbar-light .navbar-nav .nav-link.show,
+.navbar-light .navbar-nav .nav-link.active {
+    color:ghostwhite;
+    font-weight: 600;
+}
+/* // override nav-item focus */
+.navbar-light .navbar-nav .nav-link:focus {
+    color: rgba(219, 219, 219, 0.7);
+}
+
+/* // override site name fonts */
+.navbar-light .navbar-nav .nav-link{
+    color:ghostwhite;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* //override site name focus */
+.navbar-light .navbar-brand:focus {
+    color: rgba(219, 219, 219, 0.7);
+}
+
+.navbar-light .navbar-nav .nav-link:hover{
+    color:ghostwhite;
+    font-weight: 600;
+}
+/* //override nav-item create drop down content */
+.dropdown-item {
+    font-weight: 600;
+    color: ghostwhite;
+    background-color: #991d47;
+}
+/* //override nav-item CREATE drop down menu */
+.dropdown-menu {
+    background-color: #90958e;
+
+}
+/* //override message alert */
+.alert-danger {
+    text-transform: capitalize;
+}
+/* custom btn */
+.btn-custom{
+    color: #fff;
+    background-color: #8b004d;
+    border-color: #991d47;
+    font-weight: 800;
+}
+/* paginate button */
+.page-item.active .page-link {
+    z-index: 0 !important;
+    color: #fff !important;
+    background-color: #8b004d !important;
+    border-color: #991d47 !important;
+}
+.page-link:hover{
+    color: #8b004d !important;
+}
+.page-link{
+    color:gray !important;
+}
+.custom-column-style{
+    background-color: #eae9e9;
+    padding: 10px 8px !important;
+    border-radius: 5px !important;
+    border: solid !important;
+    border-color: #dfdfe2 !important;
+    margin: 2px !important;
+}
+.custom-tbody{
+    background-color: #f8fafc !important;
+}
+.form-control:disabled, .form-control[readonly] {
+    background-color: #fcfdff !important;
+    opacity: 1 !important;
+}
+.custom-red{
+    background-color: #8b004d;
+}
+.card-header.custom-red {
+    font-size: large !important;
+    color: ghostwhite !important;
+}
+/* //set modal popup hight in users account */
+.modal-body{
+    max-height: 350px !important;
+    overflow-y: scroll !important;
+}
+
+/* //set width of search bar in manage */
+.dataTables_filter input {
+    max-width: 500px !important;
+    min-width: 250px !important;
+}
+.btn{
+    min-width : 70px !important;
+}
+.cursor_null{
+    cursor: not-allowed !important;
+}
+.number_td{
+	width: 10px !important;
+}
+.cursor_null{
+    cursor: not-allowed !important;
+}
+
+.custom-cover-photo{
+    /* The image used */
+    background-image: url("img_girl.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.card_books{
+    min-height: 250px;
+}
+/* Active nav link */
+.active_link{
+    font-size: 14px !important;
+    font-weight: 800;
+}
+
+.header_navbar{
+  background-image: url("/used_images/cover_nave.jpg");
+  height: 100px;
+   background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+div.cover_text {
+    position: absolute;
+    width:30%;
+    bottom: 5px;
+    background-color: #44444447;
+} 
