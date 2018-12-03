@@ -29,6 +29,11 @@ body {
     transition: 0.3s;
 }
 
+
+.sidenav_menu{
+    display: show;
+}
+
 .sidenav a:hover {
     color: #f1f1f1;
 }
