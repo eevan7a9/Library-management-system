@@ -19,7 +19,7 @@ class UserTableSeeder extends Seeder
            'email' => 'admin@gmail.com',
            'status' => 1,
            'user_type' => 2,
-           'password' => bcrypt('123123'),
+           'password' => bcrypt('adminpassword'),
            'created_at' => '2018-09-13 05:21:34',
            'updated_at' => now(),
        ]);
