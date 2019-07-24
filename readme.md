@@ -52,10 +52,42 @@ DB_DATABASE=library_ms
 DB_USERNAME=root
 DB_PASSWORD=
 ```
-RUN
-```
-php artisan key:generate
+
+We generate secret key and update composer running the following commands in the terminal/cmd
+
+``` 
+php artisan key:generate 
+
 composer update
-php artisan migrate
+```
+
+We will add tables to the database we created
+```
+ php artisan migrate
+```
+
+We generate Users and Admin of the application
+```
+php artisan db:seed
+```
+
+## Running the Application
+
+in the terminal/cmd:
+``` 
 php artisan serve
 ```
+After seeding the database. with php artisan db:seed
+
+you can Login as **Admin**.
+
+email Address:
+```
+admin@gmail.com
+```
+password
+```
+adminpassword
+```
+You can change the password and email of the **Admin** after you login.
+You can chane it at "Account Info"
