@@ -1,6 +1,7 @@
 # Library MS
 This is Simple Library Management System. 
 to enhance my knowledge in using the Laravel Framework
+a System that will manage books and users activity.
 
 ## Prerequisites
 
