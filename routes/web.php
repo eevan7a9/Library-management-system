@@ -16,7 +16,7 @@ use App\Http\Controllers\BorrowersController;
 Route::get('/', function () {
     return view('home');
 });
-Route::get('/application', 'applicationController@index')->name('application');
+Route::get('/application', 'ApplicationController@index')->name('application');
 /**get search result */
 Route::get('/searched', 'HomeController@search_results')->name('search');
 // Auth & user login
