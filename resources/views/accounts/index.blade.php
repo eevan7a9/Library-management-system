@@ -55,7 +55,7 @@
     @if ($users->user_type > 0)
             <div class="col-12 col-sm-6 col-md-3 mb-2">
                 <div class="card text-center">
-                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    
                     <div class="card-body justify-content-center ">
                         <i class="fas fa-user-tie" style="font-size: 36px"></i>
                         <h5 class="card-title text-capitalize font-weight-bold">Added Authors :<br>
@@ -67,7 +67,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3 mb-2">
                 <div class="card text-center">
-                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    
                     <div class="card-body">
                         <i class="fas fa-layer-group" style="font-size: 36px"></i>
                         <h5 class="card-title text-capitalize font-weight-bold">Added Categories:<br>
@@ -80,7 +80,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3 mb-2">
                 <div class="card text-center">
-                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    
                     <div class="card-body">
                         <i class="fas fa-file-upload" style="font-size: 36px"></i>
                         <h5 class="card-title text-capitalize font-weight-bold">Added Publishers:<br>
@@ -93,7 +93,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3 mb-2">
                 <div class="card text-center">
-                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    
                     <div class="card-body">
                         <i class="fas fa-archive" style="font-size: 36px"></i>
                         <h5 class="card-title text-capitalize font-weight-bold">Added Shelves:<br>
@@ -107,7 +107,7 @@
            
             <div class="col-12 col-sm-6 col-md-3 mb-2">
                 <div class="card text-center">
-                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    
                     <div class="card-body">
                         <i class="fas fa-book" style="font-size: 36px"></i>
                         <h5 class="card-title text-capitalize font-weight-bold">Added Books:<br>
@@ -120,7 +120,7 @@
             </div>
              <div class="col-12 col-sm-6 col-md-3 mb-2">
                     <div class="card text-center">
-                        <img class="card-img-top" src="holder.js/100px180/" alt="">
+                        
                         <div class="card-body">
                             <i class="fas fa-share-square" style="font-size: 36px"></i>
                         <h5 class="card-title text-capitalize font-weight-bold">Issued Books:<br>
@@ -133,7 +133,7 @@
                 </div>
             <div class="col-12 col-sm-6 col-md-3 mb-2">
                 <div class="card text-center">
-                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    
                     <div class="card-body">
                         <i class="fas fa-undo-alt" style="font-size: 36px"></i>
                         <h5 class="card-title text-capitalize font-weight-bold">Received Books:<br>
@@ -151,7 +151,7 @@
     <div class="row">
             <div class="col-12 col-sm-6 col-md-3 mb-2">
                 <div class="card text-center">
-                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    
                     <div class="card-body">
                         <i class="fas fa-book-reader" style="font-size: 36px"></i>
                         <h5 class="card-title text-capitalize font-weight-bold">Borrowed Books Total:<br>
@@ -164,7 +164,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3 mb-2">
                 <div class="card text-center">
-                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    
                     <div class="card-body">
                         <i class="fas fa-check-circle" style="font-size: 36px"></i>
                         <h5 class="card-title text-capitalize font-weight-bold">All Returned Books:<br>
@@ -177,7 +177,7 @@
             </div>
             <div class="col-12 col-sm-6 col-md-3 mb-2">
                 <div class="card text-center">
-                    <img class="card-img-top" src="holder.js/100px180/" alt="">
+                    
                     <div class="card-body">
                         <i class="fas fa-exclamation-triangle" style="font-size: 36px"></i>
                         <h5 class="card-title text-capitalize font-weight-bold">Not Returned Books:<br>
