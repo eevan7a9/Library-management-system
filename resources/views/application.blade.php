@@ -10,7 +10,7 @@
                 </div>
                 <div class="mr-5">Registered Users:<br><h3 class="pl-3 font-weight-bold">{{ count($users) }}</h5></div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="users/">
+            <a class="card-footer text-white clearfix small z-1" href="users">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                 <i class="fas fa-angle-right"></i>
@@ -27,7 +27,7 @@
                     <div class="mr-5">Registered Books:<br><h3 class="pl-3 font-weight-bold">{{ $books_count }}</h5>
                     </div>
                 </div>
-                <a class="card-footer text-white clearfix small z-1" href="books/">
+                <a class="card-footer text-white clearfix small z-1" href="books">
                 <span class="float-left">View Details</span>
                 <span class="float-right"><i class="fas fa-angle-right"></i></span>
                 </a>
@@ -41,7 +41,7 @@
                 </div>
                 <div class="mr-5">Borrowed Books:<br><h3 class="pl-3 font-weight-bold">{{ count($borrowers) }}</h5></div>
             </div>
-            <a class="card-footer text-white clearfix small z-1" href="borrowers/">
+            <a class="card-footer text-white clearfix small z-1" href="borrowers">
                 <span class="float-left">View Details</span>
                 <span class="float-right">
                 <i class="fas fa-angle-right"></i>
