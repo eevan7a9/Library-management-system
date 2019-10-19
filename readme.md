@@ -1,6 +1,6 @@
 # Library MS
 This is Simple Library Management System. 
-to enhance my knowledge in using the Laravel Framework
+is a software used to manage all the books in a library.  This helps to keep the records of whole transactions of the books available in the library
 a System that will manage books and users activity.
 
 ## Prerequisites
