@@ -29,5 +29,12 @@ class PublishersTableSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+        DB::table('publishers')->insert([
+            'name' => 'Atria Books ',
+            'user_id' => 5,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
     }
 }

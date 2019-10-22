@@ -13,6 +13,7 @@ class BooksTableSeeder extends Seeder
     public function run()
     {
         DB::table('books')->insert([
+            'id' => 1,
             'name' => 'Harry Potter and the Cursed Child',
             'category_id' => 1,
             'author_id' => 2,
@@ -34,6 +35,7 @@ class BooksTableSeeder extends Seeder
         ]);
 
         DB::table('books')->insert([
+            'id' => 2,
             'name' => 'Game of Thrones',
             'category_id' => 1,
             'author_id' => 2,
@@ -54,6 +56,7 @@ class BooksTableSeeder extends Seeder
             'updated_at' => now(),
         ]);
         DB::table('books')->insert([
+            'id' => 3,
             'name' => 'Lord of The Rings',
             'category_id' => 1,
             'author_id' => 4,
@@ -73,7 +76,8 @@ class BooksTableSeeder extends Seeder
             'created_at' => '2018-11-23 09:24:14',
             'updated_at' => now(),
         ]);
-         DB::table('books')->insert([
+        DB::table('books')->insert([
+            'id' => 4,
             'name' => "Harry Potter and the Philosopher's Stone",
             'category_id' => 1,
             'author_id' => 4,
@@ -93,5 +97,27 @@ class BooksTableSeeder extends Seeder
             'created_at' => '2018-11-23 09:24:14',
             'updated_at' => now(),
         ]);
+        DB::table('books')->insert([
+            'id' => 5,
+            'name' => "Mrs. Everything ",
+            'category_id' => 1,
+            'author_id' => 5,
+            'shelf_id' => 2,
+            'publisher_id' => 4,
+            'ISBN' => '02-7ds3269-9',
+            'book_description' => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'key_word' => 'Love, Fun,',
+            'user_id' => 5,
+            'created_at' => '2018-11-23 09:24:14',
+            'updated_at' => now(),
+        ]);
+        DB::table('books_number')->insert([
+            'book_id' => 5,
+            'books_total_count' => 23,
+            'books_available' => 23,
+            'created_at' => '2018-11-23 09:24:14',
+            'updated_at' => now(),
+        ]);
+
     }
 }

@@ -35,5 +35,12 @@ class AuthorsTableSeeder extends Seeder
             'created_at' => now(),
             'updated_at' => now(),
         ]);
+        DB::table('authors')->insert([
+            'name' => 'Jennifer Weiner',
+            'user_id' => 2,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+
     }
 }
