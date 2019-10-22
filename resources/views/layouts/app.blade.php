@@ -27,7 +27,7 @@
 
         <nav class="navbar navbar-expand-md navbar-light navbar-laravel" id="navbar_s">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/accounts') }}">
+                <a class="navbar-brand font-weight-bolder" href="{{ url('/accounts') }}">
                     {{ config('app.name', 'Laravel') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
@@ -38,22 +38,22 @@
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/home') }}">Home</a>
+                            <a class="nav-link font-weight-bold" href="{{ url('/home') }}">Home</a>
                         </li>
                         @auth
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/accounts') }}">Account</a>
+                            <a class="nav-link font-weight-bold" href="{{ url('/accounts') }}">Account</a>
                         </li>@endauth
                     @can('notStandard', Auth::user())
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</a>
+                            <a class="nav-link font-weight-bold dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Action</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown01">
                                 <a class="dropdown-item text-capitalize" href="{{ url('borrowers/create') }}">Issue New Book</a>
                                 <a class="dropdown-item text-capitalize" href="{{ url('return') }}">Return Book</a>
                             </div>
                         </li>
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add New</a>
+                            <a class="nav-link font-weight-bold dropdown-toggle" href="#" id="dropdown01" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Add New</a>
                             <div class="dropdown-menu" aria-labelledby="dropdown01">
                                 <a class="dropdown-item text-capitalize" href="{{ url('books/create') }}">Add New Book</a>
                                 <a class="dropdown-item text-capitalize" href="{{ url('authors/create') }}">Add New Author</a>
@@ -64,7 +64,7 @@
                         </li>
 
                        <li class="nav-item">
-                            <a class="nav-link" href="{{ url('/borrowers') }}">Manage</a>
+                            <a class="nav-link font-weight-bold" href="{{ url('/borrowers') }}">Manage</a>
                         </li>
 
                     @endcan
@@ -75,11 +75,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                <a class="nav-link font-weight-bold" href="{{ route('login') }}">{{ __('Login') }}</a>
                             </li>
                             <li class="nav-item">
                                 @if (Route::has('register'))
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link font-weight-bold" href="{{ route('register') }}">{{ __('Register') }}</a>
                                 @endif
                             </li>
                         @else
