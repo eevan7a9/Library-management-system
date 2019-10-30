@@ -28,7 +28,6 @@ class AccountsController extends Controller
             $borrowed = Borrower::all()->where('user_id', '=', $users->id);
             $borrowed_returned = Borrower::all()->where('user_id', '=', $users->id)->where('status', '=', '0');
             $currently_borrowed = Borrower::all()->where('user_id', '=', $users->id)->where('status', '=', '1');
-            
             return view('accounts.index')
                 ->with('users', $users)
                 ->with('authors', $users_created->authors)
