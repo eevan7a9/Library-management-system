@@ -1,8 +1,8 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateBooksTable extends Migration
 {
@@ -27,25 +27,25 @@ class CreateBooksTable extends Migration
             $table->timestamps();
 
             $table->foreign('category_id')->references('id')
-            ->on('categories')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+                ->on('categories')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->foreign('author_id')->references('id')
-            ->on('authors')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+                ->on('authors')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->foreign('shelf_id')->references('id')
-            ->on('shelves')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+                ->on('shelves')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->foreign('publisher_id')->references('id')
-            ->on('publishers')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+                ->on('publishers')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->foreign('user_id')->references('id')
-            ->on('users')
-            ->onDelete('cascade')
-            ->onUpdate('cascade');
+                ->on('users')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
         });
     }
 
@@ -56,6 +56,8 @@ class CreateBooksTable extends Migration
      */
     public function down()
     {
+        Schema::disableForeignKeyConstraints();
         Schema::dropIfExists('books');
+        Schema::enableForeignKeyConstraints();
     }
 }
