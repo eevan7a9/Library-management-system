@@ -16,7 +16,7 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
-     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span> 
+     <span style="font-size:30px;cursor:pointer" onclick="openNav()">&#9776;</span>
             <a class="navbar-brand ml-3" href="{{ url('/accounts') }}">
                 {{ config('app.name', 'Laravel') }}
             </a>
@@ -111,13 +111,15 @@
                     <i class="fas fa-check-circle mr-3"></i>Return Book</a>
             </div>
         </li>
-    </div>        
+    </div>
 </div>
 
 <div id="main">
     <br>
     <br>
     <br>
+    <br>
+    @include('inc.message')
  @yield('content')
 </div>
 
@@ -150,11 +152,11 @@ function openNav() {
         navItem.style.display = 'none';
         Status = 'close';
     }
-   
+
 
     screen.addListener(openNav)
 }
 </script>
-     
+
 </body>
-</html> 
+</html>
