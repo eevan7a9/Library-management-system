@@ -22,7 +22,7 @@ class ApplicationController extends Controller
     {
         $users = User::all()->where('status', 1);
         $books_count = DB::table('books_number')->sum('books_total_count');
-        $borrowers = Borrower::all();
+        $borrowers = Borrower::where('status', 1)->get();
         $shelves = Shelf::all();
 
         if (Auth::user()->user_type == 2) {
