@@ -50,7 +50,7 @@
             </div>
         </div>
         <hr>
-        <h5>You're Activity</h5>
+        <h5>Your Activity</h5>
         <div class="row">
     @if ($users->user_type > 0)
             <div class="col-12 col-sm-6 col-md-3 mb-2">
