@@ -8,10 +8,8 @@ use App\Category;
 use App\Publisher;
 use App\Shelf;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Validation\Validator;
 use Illuminate\Http\Request;
-use Illuminate\Database\Query\Builder;
-use DB;
+use Illuminate\Support\Facades\DB;
 
 
 class BooksController extends Controller
@@ -35,7 +33,7 @@ class BooksController extends Controller
     {
         if (Auth::user()->user_type == 2) {
             $books = Book::all();
-        }else{
+        } else {
             $books = Book::all()->where('user_id', Auth::user()->id);
         }
 
@@ -55,10 +53,10 @@ class BooksController extends Controller
         $shelves = Shelf::Where('status', '=', 1)->orderBy('created_at')->get();
 
         return view('books.create')
-                ->with('authors', $authors)
-                ->with('categories', $categories)
-                ->with('publishers', $publishers)
-                ->with('shelves', $shelves);
+            ->with('authors', $authors)
+            ->with('categories', $categories)
+            ->with('publishers', $publishers)
+            ->with('shelves', $shelves);
     }
 
     /**
@@ -79,7 +77,7 @@ class BooksController extends Controller
 
         $number_of_books = $request->input('number_of_books');
 
-        $books = New Book;
+        $books = new Book;
         $books->name = $request->input("name");
         $books->category_id = $request->input('book_category');
         $books->author_id = $request->input('book_author');
@@ -94,11 +92,8 @@ class BooksController extends Controller
         DB::table('books_number')->insert([
             ['book_id' => $books->id, 'books_total_count' => $number_of_books, 'books_available' => $number_of_books]
         ]);
-        
-        return redirect('books')->with('success', 'New book '.$books->name.' have been added');
-        
 
-        
+        return redirect('books')->with('success', 'New book ' . $books->name . ' have been added');
     }
 
     /**
@@ -112,7 +107,6 @@ class BooksController extends Controller
         $books = Book::findOrFail($id);
         $books_number = DB::table('books_number')->where('book_id', $id)->first();
         return view('books.show')->with('books', $books)->with('books_number', $books_number);
-
     }
 
     /**
@@ -132,14 +126,13 @@ class BooksController extends Controller
 
         $books = Book::find($id);
         return view("books.edit")
-                ->with('authors', $authors)
-                ->with('categories', $categories)
-                ->with('publishers', $publishers)
-                ->with('shelves', $shelves)
-                ->with('numbers', $numbers)
-                ->with('borrowed', $borrowed)
-                ->with("books", $books);
-
+            ->with('authors', $authors)
+            ->with('categories', $categories)
+            ->with('publishers', $publishers)
+            ->with('shelves', $shelves)
+            ->with('numbers', $numbers)
+            ->with('borrowed', $borrowed)
+            ->with("books", $books);
     }
 
     /**
@@ -153,7 +146,7 @@ class BooksController extends Controller
     {
         $validated = $request->validate([
             'name' => 'required',
-            'ISBN' => 'required|unique:books',
+            'ISBN' => 'required|unique:books,ISBN,' . $id . ',id',
             'available' => 'required|numeric',
             // 'number_of_books' => 'required',
 
@@ -180,8 +173,7 @@ class BooksController extends Controller
         $books->user_id = $users->id;
         $books->save();
 
-        return redirect('books')->with('success', 'Book '.$books->name.' have been Updated');
-
+        return redirect('books')->with('success', 'Book ' . $books->name . ' have been Updated');
     }
 
     /**
