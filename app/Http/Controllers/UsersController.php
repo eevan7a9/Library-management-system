@@ -3,15 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\User;
-use Illuminate\Validation\Validator;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use App\Borrower;
 
 class UsersController extends Controller
 {
-    public function __construct() {
+    public function __construct()
+    {
         $this->middleware('auth');
         $this->middleware('not_standard');
         $this->middleware('only_admin');
@@ -61,10 +60,9 @@ class UsersController extends Controller
         $current_borrowed = Borrower::all()->where('status', '=', 1)->where('user_id', '=', $id);
         $total_borrowed = Borrower::all()->where('user_id', '=', $id);
         return view("users.show")
-        ->with('users', $users)
-        ->with('borrowed', $current_borrowed)
-        ->with('total_borrowed', $total_borrowed);
-
+            ->with('users', $users)
+            ->with('borrowed', $current_borrowed)
+            ->with('total_borrowed', $total_borrowed);
     }
 
     /**
@@ -88,16 +86,18 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $users = User::find($id);
-            $users->first_name = $request->input("first_name");
-            $users->last_name = $request->input("last_name");
-            $users->username = $request->input("username");
-            $users->email = $request->input("email");
-            $users->status = $request->input('user_status');
-            $users->user_type = $request->input('user_type');
-            $users->save();
+        return redirect('/users')->with('error', "This action is restricted for this Demo Project");
+        // $users = User::find($id);
 
-                return redirect('/users')->with('success', "User ".$users->username. " have been Updated!!!");
+        // $users->first_name = $request->input("first_name");
+        // $users->last_name = $request->input("last_name");
+        // $users->username = $request->input("username");
+        // $users->email = $request->input("email");
+        // $users->status = $request->input('user_status');
+        // $users->user_type = $request->input('user_type');
+        // $users->save();
+
+        // return redirect('/users')->with('success', "User " . $users->username . " have been Updated!!!");
     }
 
     /**
