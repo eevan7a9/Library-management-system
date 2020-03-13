@@ -118,6 +118,47 @@ class BooksTableSeeder extends Seeder
             'created_at' => '2018-11-23 09:24:14',
             'updated_at' => now(),
         ]);
-
+        DB::table('books')->insert([
+            'id' => 6,
+            'name' => "Hamlet: The Tragedy of Hamlet",
+            'category_id' => 4,
+            'author_id' => 6,
+            'shelf_id' => 3,
+            'publisher_id' => 5,
+            'ISBN' => '1979482055',
+            'book_description' => "The Tragedy of Hamlet, Prince of Denmark, often shortened to Hamlet, is a tragedy written by William Shakespeare at an uncertain date between 1599 and 1602. One of the greatest plays of all time, the compelling tragedy of the tormented young prince of Denmark continues to capture the imaginations of modern audiences worldwide. William Shakespeare's Hamlet follows the young prince Hamlet home to Denmark to attend his father's funeral. Hamlet is shocked to find his mother already remarried to his Uncle Claudius, the dead king's brother.",
+            'key_word' => 'Love, Fun,',
+            'user_id' => 1,
+            'created_at' => '2020-3-12 09:24:14',
+            'updated_at' => now(),
+        ]);
+        DB::table('books_number')->insert([
+            'book_id' => 6,
+            'books_total_count' => 6,
+            'books_available' => 6,
+            'created_at' => '2020-3-12 09:24:14',
+            'updated_at' => now(),
+        ]);
+        DB::table('books')->insert([
+            'id' => 7,
+            'name' => "Mrs. Dalloway",
+            'category_id' => 4,
+            'author_id' => 7,
+            'shelf_id' => 3,
+            'publisher_id' => 6,
+            'ISBN' => '978-1946963000',
+            'book_description' => "The Tragedy of Hamlet, Prince of Denmark, often shortened to Hamlet, is a tragedy written by William Shakespeare at an uncertain date between 1599 and 1602. One of the greatest plays of all time, the compelling tragedy of the tormented young prince of Denmark continues to capture the imaginations of modern audiences worldwide. William Shakespeare's Hamlet follows the young prince Hamlet home to Denmark to attend his father's funeral. Hamlet is shocked to find his mother already remarried to his Uncle Claudius, the dead king's brother.",
+            'key_word' => 'Love, Fun,',
+            'user_id' => 1,
+            'created_at' => '2020-3-12 09:24:14',
+            'updated_at' => now(),
+        ]);
+        DB::table('books_number')->insert([
+            'book_id' => 7,
+            'books_total_count' => 10,
+            'books_available' => 10,
+            'created_at' => '2020-3-12 09:24:14',
+            'updated_at' => '2020-3-12 09:24:14',
+        ]);
     }
 }

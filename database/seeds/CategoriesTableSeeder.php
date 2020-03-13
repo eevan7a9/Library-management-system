@@ -33,5 +33,13 @@ class CategoriesTableSeeder extends Seeder
             'created_at' => '2018-11-20 05:24:34',
             'updated_at' => now(),
         ]);
+        DB::table('categories')->insert([
+            'id' => 4,
+            'name' => 'Classic Literature',
+            'status' => 1,
+            'user_id' => 1,
+            'created_at' => '2020-2-27 05:24:34',
+            'updated_at' => '2020-2-27 05:24:34',
+        ]);
     }
 }

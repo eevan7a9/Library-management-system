@@ -26,5 +26,12 @@ class ShelvesTableSeeder extends Seeder
             'created_at' => '2018-11-30 09:24:34',
             'updated_at' => now(),
         ]);
+        DB::table('shelves')->insert([
+            'name' => 'Classical Section',
+            'status' => 1,
+            'user_id' => 1,
+            'created_at' => '2020-2-23 09:24:34',
+            'updated_at' => '2020-2-23 09:24:34',
+        ]);
     }
 }
