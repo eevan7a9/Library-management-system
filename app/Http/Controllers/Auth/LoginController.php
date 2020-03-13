@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+
 class LoginController extends Controller
 {
     /*
@@ -26,7 +27,7 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/accounts';
+    // protected $redirectTo = '/accounts';
 
     /**
      * Create a new controller instance.
@@ -42,7 +43,15 @@ class LoginController extends Controller
     //check user status if active:1 or not active:0
     protected function credentials(Request $request)
     {
-         return ['email' => $request->{$this->username()}, 'password' => $request->password, 'status' => '1'];
-
+        return ['email' => $request->{$this->username()}, 'password' => $request->password, 'status' => '1'];
+    }
+    public function redirectTo()
+    {
+        $role = Auth::user()->user_type;
+        if ($role != 2) {
+            return "/accounts";
+        } else {
+            return "/application";
+        }
     }
 }
