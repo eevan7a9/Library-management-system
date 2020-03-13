@@ -1,151 +1,151 @@
 @extends( (Auth::user()->user_type == 2) ? 'layouts.admin' : 'layouts.app')
 @section('content')
-    <div class="container custom-bg-color-light">
-        <br>
-        <div class="card text-left mb-5">
-            <div class="card-body">
-                <h2 class="card-title font-weight-bold">Account Info</h2>
-                <div class="row">
-                    <div class="col-6 col-sm-4">
-                        <dt>First Name:</dt>
-                        <div class="form-group">
-                          <input type="text" class="form-control text-capitalize" value="{{ $users->first_name }}" aria-describedby="helpId" readonly>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-4">
-                        <dt>Last Name:</dt>
-                        <div class="form-group">
-                            <input type="text" class="form-control text-capitalize" value="{{ $users->last_name }}" aria-describedby="helpId" readonly>
-                        </div>
-                    </div>
-                    <div class="col-6 col-sm-4">
-                        <dt>Username:</dt>
-                        <div class="form-group">
-                            <input type="text" class="form-control text-capitalize" value="{{ $users->username }}" aria-describedby="helpId" readonly>
-                        </div>
+<div class="container custom-bg-color-light">
+    <br>
+    <div class="card text-left mb-5">
+        <div class="card-body">
+            <h2 class="card-title font-weight-bold">Account Info</h2>
+            <div class="row">
+                <div class="col-6 col-sm-4">
+                    <dt>First Name:</dt>
+                    <div class="form-group">
+                        <input type="text" class="form-control text-capitalize" value="{{ $users->first_name }}" aria-describedby="helpId" readonly>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-12 col-sm-4">
-                        <dt>Email:</dt>
-                        <div class="form-group">
-                            <input type="text" class="form-control text-capitalize" value="{{ $users->email }}" aria-describedby="helpId" readonly>
-                        </div>
-                    </div>
-                    <div class="col-12 col-sm-4">
-                        <dt>Account Type:</dt>
-                        <?php
-                            if ($users->user_type == 2) {
-                               $user_type = "admin";
-                            } elseif($users->user_type == 1){
-                                $user_type = "librarian";
-                            }else{$user_type = "standard";}
-                        ?>
-                        <div class="form-group">
-                            <input type="text" class="form-control text-capitalize" value="{{ $user_type }}" aria-describedby="helpId" readonly>
-                        </div>
+                <div class="col-6 col-sm-4">
+                    <dt>Last Name:</dt>
+                    <div class="form-group">
+                        <input type="text" class="form-control text-capitalize" value="{{ $users->last_name }}" aria-describedby="helpId" readonly>
                     </div>
                 </div>
-                <a  href="/accounts/{{ $users->id }}/edit" <button class="btn btn-primary float-right"><i class="fas fa-user-edit"></i>Edit Info</button></a>
+                <div class="col-6 col-sm-4">
+                    <dt>Username:</dt>
+                    <div class="form-group">
+                        <input type="text" class="form-control text-capitalize" value="{{ $users->username }}" aria-describedby="helpId" readonly>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-sm-4">
+                    <dt>Email:</dt>
+                    <div class="form-group">
+                        <input type="text" class="form-control text-capitalize" value="{{ $users->email }}" aria-describedby="helpId" readonly>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-4">
+                    <dt>Account Type:</dt>
+                    <?php
+                        if ($users->user_type == 2) {
+                            $user_type = "admin";
+                        } elseif($users->user_type == 1){
+                            $user_type = "librarian";
+                        }else{$user_type = "standard";}
+                    ?>
+                    <div class="form-group">
+                        <input type="text" class="form-control text-capitalize" value="{{ $user_type }}" aria-describedby="helpId" readonly>
+                    </div>
+                </div>
+            </div>
+            <a  href="/accounts/{{ $users->id }}/edit" <button class="btn btn-primary float-right"><i class="fas fa-user-edit"></i>Edit Info</button></a>
+        </div>
+    </div>
+    <hr>
+    <h5>Your Activity</h5>
+    <div class="row">
+    @if ($users->user_type > 0)
+        <div class="col-12 col-sm-6 col-md-3 mb-2">
+            <div class="card text-center">
+
+                <div class="card-body justify-content-center ">
+                    <i class="fas fa-user-tie" style="font-size: 36px"></i>
+                    <h5 class="card-title text-capitalize font-weight-bold">Added Authors :<br>
+                    <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#AuthorsModal">
+                        {{ count($authors) }}
+                    </button></h5>
+                </div>
             </div>
         </div>
-        <hr>
-        <h5>Your Activity</h5>
-        <div class="row">
-        @if ($users->user_type > 0)
-            <div class="col-12 col-sm-6 col-md-3 mb-2">
-                <div class="card text-center">
+        <div class="col-12 col-sm-6 col-md-3 mb-2">
+            <div class="card text-center">
 
-                    <div class="card-body justify-content-center ">
-                        <i class="fas fa-user-tie" style="font-size: 36px"></i>
-                        <h5 class="card-title text-capitalize font-weight-bold">Added Authors :<br>
-                        <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#AuthorsModal">
-                            {{ count($authors) }}
-                        </button></h5>
-                    </div>
+                <div class="card-body">
+                    <i class="fas fa-layer-group" style="font-size: 36px"></i>
+                    <h5 class="card-title text-capitalize font-weight-bold">Added Categories:<br>
+                        <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#CategoriesModal">
+                            {{ count($categories) }}
+                        </button>
+                    </h5>
                 </div>
             </div>
-            <div class="col-12 col-sm-6 col-md-3 mb-2">
-                <div class="card text-center">
-
-                    <div class="card-body">
-                        <i class="fas fa-layer-group" style="font-size: 36px"></i>
-                        <h5 class="card-title text-capitalize font-weight-bold">Added Categories:<br>
-                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#CategoriesModal">
-                                {{ count($categories) }}
-                            </button>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3 mb-2">
-                <div class="card text-center">
-
-                    <div class="card-body">
-                        <i class="fas fa-file-upload" style="font-size: 36px"></i>
-                        <h5 class="card-title text-capitalize font-weight-bold">Added Publishers:<br>
-                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#PublishersModal">
-                                {{ count($publishers) }}
-                            </button>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-            <div class="col-12 col-sm-6 col-md-3 mb-2">
-                <div class="card text-center">
-
-                    <div class="card-body">
-                        <i class="fas fa-archive" style="font-size: 36px"></i>
-                        <h5 class="card-title text-capitalize font-weight-bold">Added Shelves:<br>
-                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#ShelvesModal">
-                                {{ count($shelves) }}
-                            </button>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 col-sm-6 col-md-3 mb-2">
-                <div class="card text-center">
-
-                    <div class="card-body">
-                        <i class="fas fa-book" style="font-size: 36px"></i>
-                        <h5 class="card-title text-capitalize font-weight-bold">Added Books:<br>
-                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#BooksAddedModal">
-                            {{ count($books) }}
-                            </button>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-             <div class="col-12 col-sm-6 col-md-3 mb-2">
-                    <div class="card text-center">
-
-                        <div class="card-body">
-                            <i class="fas fa-share-square" style="font-size: 36px"></i>
-                        <h5 class="card-title text-capitalize font-weight-bold">Issued Books:<br>
-                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#BooksIssuedModal">
-                                {{ count($issued) }}
-                            </button>
-                        </h5>
-                    </div>
-                </div>
-                </div>
-            <div class="col-12 col-sm-6 col-md-3 mb-2">
-                <div class="card text-center">
-
-                    <div class="card-body">
-                        <i class="fas fa-undo-alt" style="font-size: 36px"></i>
-                        <h5 class="card-title text-capitalize font-weight-bold">Received Books:<br>
-                            <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#BooksReceivesModal">
-                            {{ count($receives) }}
-                            </button>
-                        </h5>
-                    </div>
-                </div>
-            </div>
-        @endif
         </div>
+        <div class="col-12 col-sm-6 col-md-3 mb-2">
+            <div class="card text-center">
+
+                <div class="card-body">
+                    <i class="fas fa-file-upload" style="font-size: 36px"></i>
+                    <h5 class="card-title text-capitalize font-weight-bold">Added Publishers:<br>
+                        <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#PublishersModal">
+                            {{ count($publishers) }}
+                        </button>
+                    </h5>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3 mb-2">
+            <div class="card text-center">
+
+                <div class="card-body">
+                    <i class="fas fa-archive" style="font-size: 36px"></i>
+                    <h5 class="card-title text-capitalize font-weight-bold">Added Shelves:<br>
+                        <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#ShelvesModal">
+                            {{ count($shelves) }}
+                        </button>
+                    </h5>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-3 mb-2">
+            <div class="card text-center">
+
+                <div class="card-body">
+                    <i class="fas fa-book" style="font-size: 36px"></i>
+                    <h5 class="card-title text-capitalize font-weight-bold">Added Books:<br>
+                        <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#BooksAddedModal">
+                        {{ count($books) }}
+                        </button>
+                    </h5>
+                </div>
+            </div>
+        </div>
+            <div class="col-12 col-sm-6 col-md-3 mb-2">
+                <div class="card text-center">
+
+                    <div class="card-body">
+                        <i class="fas fa-share-square" style="font-size: 36px"></i>
+                    <h5 class="card-title text-capitalize font-weight-bold">Issued Books:<br>
+                        <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#BooksIssuedModal">
+                            {{ count($issued) }}
+                        </button>
+                    </h5>
+                </div>
+            </div>
+            </div>
+        <div class="col-12 col-sm-6 col-md-3 mb-2">
+            <div class="card text-center">
+
+                <div class="card-body">
+                    <i class="fas fa-undo-alt" style="font-size: 36px"></i>
+                    <h5 class="card-title text-capitalize font-weight-bold">Received Books:<br>
+                        <button type="button" class="btn btn-custom" data-toggle="modal" data-target="#BooksReceivesModal">
+                        {{ count($receives) }}
+                        </button>
+                    </h5>
+                </div>
+            </div>
+        </div>
+    @endif
+    </div>
     <hr>
     <h4>Borrowed</h4>
     <div class="row">
